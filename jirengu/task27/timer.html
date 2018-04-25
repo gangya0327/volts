@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <select name="" id="myselect">
+    <option value="1" selected>1</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+  </select>
+  <button id='start'>start</button>
+  <button id='pause' disabled>pause</button>
+  <button id='resume' disabled>resume</button>
+  <div id="output"></div>
+  <script>
+  var timeLeft = 10
+  let timer
+  function showTime(){
+    if(timeLeft == 0) return
+    output.textContent = timeLeft
+    timeLeft -= 1
+    timer = setTimeout(showTime, 1000)
+  }
+  start.addEventListener('click', function(){
+    timeLeft = myselect.value
+    if(timer) clearTimeout(timer)
+    showTime()
+    pause.disabled = false
+  })
+  pause.addEventListener('click', function(){
+    if(timer) clearTimeout(timer)
+    resume.disabled = false
+    pause.disabled = true
+  })
+  resume.addEventListener('click', function(){
+    if(timer) clearTimeout(timer)
+    showTime()
+    resume.disabled = true
+    pause.disabled = false
+  })
+  </script>
+</body>
+</html>

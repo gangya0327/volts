@@ -22,6 +22,12 @@ new Vue({
         updateXY: function(e) {
             this.x = e.offsetX
             this.y = e.offsetY
+        },
+        stopMoving: function(e){
+            e.stopPropagation();
+        },
+        open: function(){
+            alert('open')
         }
     }
 })
