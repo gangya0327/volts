@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src='https://unpkg.com/vue'></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>v-if 条件</h1>
+    <button v-on:click='error = !error'>Toggle error</button>
+    <button v-on:click='success = !success'>Toggle success</button>
+    <p v-if='error'>网络错误404</p>
+    <p v-else-if='success'>网络连接成功200</p>
+    <h1>v-show 条件</h1>
+    <p v-show='error'>网络错误404</p>
+    <p v-show='success'>网络连接成功200</p>
+
+    <h1>v-for 循环</h1>
+    <ul>
+      <li v-for='character in characters'>
+        {{character}}
+      </li>
+    </ul>
+    <ul>
+      <li v-for='(user, index) in users'>
+        {{index+1}}. {{user.name}} - {{user.age}}
+      </li>
+    </ul>
+
+    <h1>template 模版</h1>
+    <template v-for='(user, index) in users'>
+      <h4>{{user.name}}</h4>
+      <p>{{user.age}}</p>
+    </template>
+    <template v-for='(user, index) in users'>
+      <div v-for='(haha, gaga) in user'>
+        <p>{{gaga}} - {{haha}}</p>
+      </div>
+    </template>
+
+  </div>
+  <script src='base04.js'></script>
+</body>
+
+</html>

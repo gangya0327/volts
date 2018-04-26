@@ -1,0 +1,2 @@
+- task27：闭包，setTimeout，BOM
+- task28：bom
