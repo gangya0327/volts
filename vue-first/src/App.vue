@@ -1,27 +1,34 @@
 <template>
   <div id="app">
-    Hello Vue.js
-    <h1>{{title}}</h1>
-    <global/>
-    <users/>
+    <ul>
+      <li>
+        <router-link to='/'>Home</router-link>         
+      </li>
+      <li>
+        <router-link to='/helloworld'>Hello World</router-link>
+      </li>
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-// 局部注册组件
-import Users from './components/Users'
 
 export default {
-  name: 'App',
-  data(){
+  name: "App",
+  data() {
     return {
-      title: '这是我的第一个vue项目'
-    }
+    };
   },
-  components: {
-    'users': Users
+  created(){
+    //fetch
+    // fetch('http://106.12.7.122:8080/oauth/token', {
+    //   methods:'post',
+    //   body: 'hello'
+    //   })
+    //axios
   }
-}
+};
 </script>
 
 <style>
