@@ -2,7 +2,7 @@
   <div>
     <h1>Users</h1>
     <ul>
-      <li v-for='user in users'>{{user.name}}: {{user.email}}</li>
+      <!-- <li v-for='user in users'>{{user.name}}: {{user.email}}</li> -->
     </ul>
   </div>
 </template>
