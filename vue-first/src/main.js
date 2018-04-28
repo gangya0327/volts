@@ -4,9 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import axios from 'axios'
 import Global from './components/Global'
 import HelloWorld from './components/HelloWorld'
 import Home from './components/Home'
+
+Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
 
