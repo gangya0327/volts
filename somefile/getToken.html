@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <title>Document</title>
 </head>
 
@@ -23,6 +24,32 @@
     <input type="text" name="password" id="" value="123456">
     <input type="submit" name="" id="" value="提交">
   </form>
+
+  <button id='goPOST'>post</button>
+  <script>
+  $(document).ready(function(){
+    $('#goPOST').click(function(){
+      $.ajax({
+        type: 'POST',
+        url: 'http://106.12.7.122:8080/oauth/token',
+        data: {
+          client_secret: "123",
+          client_id: "admin",
+          username: "admin",
+          grant_type: "password",
+          password: "123"
+        },
+        dataType: 'json',
+        success: function(){
+          console.log(123)
+        },
+        error: function(){
+          console.log(999)
+        }
+      })
+    })
+  })
+  </script>
 </body>
 
 </html>
