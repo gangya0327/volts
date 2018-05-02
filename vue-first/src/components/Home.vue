@@ -53,6 +53,27 @@ export default {
       //console.log(data);
       this.people = data.body;
     }),
+      this.$http
+        .post(
+          "http://106.12.7.122:8080/oauth/token",
+          {
+            client_secret: "123",
+            client_id: "admin",
+            username: "admin",
+            grant_type: "password",
+            password: "123"
+          },
+          { emulateJSON: true }
+        )
+        .then(
+          function(data) {
+            console.log("有返回了");
+            console.log(data.body);
+          },
+          function() {
+            console.log("error");
+          }
+        ),
       fetch("/apis/oauth/token", {
         method: "post",
         headers: {

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id='openBtn'>中间打开新窗口</button>
+  <button id='searchBtn'>搜索内容</button>
+
+  <script>
+    openBtn.onclick = function() {
+      $.bom.openAtCenter(900, 600, 'http://www.baidu.com')
+    }
+    searchBtn.onclick = function() {
+      console.log($.bom.search('姓名'))
+      console.log($.bom.search('b'))
+    }
+    window.$ = function() {
+      let array = []
+      return array
+    }
+    $.bom = {
+      openAtCenter: function(width, height, url) {
+        window.open(url, '_blank', `
+        width=${width}px, height=${height}px,
+        screenX=${(screen.width-width)/2}px,
+        screenY=${(screen.height-height)/2}px,
+        `)
+      },
+      search: function(name, value) {
+        if (value === undefined) {
+          let result = {}
+          let search = window.location.search
+            //去掉?问号
+          if (search[0] == '?') {
+            search = search.slice(1)
+          }
+          //用&分隔成数组，遍历他
+          let searchArray = search.split('&')
+          for (var i = 0; i < searchArray.length; i++) {
+            let parts = searchArray[i].split('=')
+            result[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1])
+          }
+          console.log(result)
+          return decodeURIComponent(result[name])
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    button {
+      border-radius: 3px;
+      border: none;
+      font-size: 16px;
+      padding: 10px;
+      margin: 5px;
+    }
+    
+    button:hover {
+      background-color: #aaa;
+      cursor: pointer;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <button id='back'>后退</button>
+  <button id='forward'>前进</button>
+  <hr>
+  <button id='innerH'>浏览器内部高度</button>
+  <button id='outerH'>浏览器外部高度（包含工具栏）</button>
+  <button id='screenXX'>screenX浏览器左边界到操作系统桌面左边界的水平距离</button>
+  <button id='screenYY'>screenY浏览器顶部距离系统桌面顶部的垂直距离</button>
+  <hr>
+  <button id='host'>host主机</button>
+  <button id='pathname'>pathname路径</button>
+  <button id='protocol'>protocol协议</button>
+  <button id='hostname'>hostname域名</button>
+  <button id='port'>port端口</button>
+  <hr>
+  <button id='locate'>location跳转</button>
+  <button id='new400'>弹出400*400的新窗口</button>
+  <script>
+    window.document.write(Math.random())
+  </script>
+
+
+  <script>
+    back.onclick = function() {
+      window.history.back()
+    }
+    forward.onclick = function() {
+      window.history.forward()
+    }
+    innerH.onclick = function() {
+      console.log(window.innerHeight)
+    }
+    outerH.onclick = function() {
+      console.log(window.outerHeight)
+    }
+    screenXX.onclick = function() {
+      console.log(window.screenX)
+    }
+    screenYY.onclick = function() {
+      console.log(window.screenY)
+    }
+    host.onclick = function() {
+      console.log(window.location.host)
+    }
+    pathname.onclick = function() {
+      console.log(window.location.pathname)
+    }
+    protocol.onclick = function() {
+      console.log(window.location.protocol)
+    }
+    hostname.onclick = function() {
+      console.log(window.location.hostname)
+    }
+    port.onclick = function() {
+      console.log(window.location.port)
+    }
+    locate.onclick = function() {
+      window.location.href = '//www.baidu.com'
+    }
+    new400.onclick = function() {
+      let f = 'width=400px,height=400px'
+      window.open('iframe.html', '_blank', f)
+    }
+  </script>
+</body>
+
+</html>
