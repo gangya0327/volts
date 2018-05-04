@@ -1,12 +1,15 @@
 <template>
   <div id="translateOutput">
-    123
+    <h1>{{TranslateText}}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'translateOutput'
+  name: 'translateOutput',
+  props: [
+    'TranslateText'
+  ]
 }
 </script>
 
