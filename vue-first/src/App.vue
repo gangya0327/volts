@@ -7,6 +7,15 @@
       <li>
         <router-link to='/helloworld'>Hello World</router-link>
       </li>
+      <li>
+        <router-link to='/learnES6'>learnES6</router-link>
+      </li>
+      <li>
+        <router-link to='/userlist'>userlist</router-link>
+      </li>
+      <li>
+        <router-link to='/translate'>translate</router-link>
+      </li>
     </ul>
     <router-view></router-view>
   </div>
@@ -15,19 +24,7 @@
 <script>
 
 export default {
-  name: "App",
-  data() {
-    return {
-    };
-  },
-  created(){
-    //fetch
-    // fetch('http://106.12.7.122:8080/oauth/token', {
-    //   methods:'post',
-    //   body: 'hello'
-    //   })
-    //axios
-  }
+  name: "App"
 };
 </script>
 

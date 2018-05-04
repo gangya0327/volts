@@ -4,13 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
-// import axios from 'axios'
 import Global from './components/Global'
-import HelloWorld from './components/HelloWorld'
 import Home from './components/Home'
+import HelloWorld from './components/HelloWorld'
+import UsersList from './components/UsersList'
+import LearnES6 from './components/LearnES6'
+import Translate from './components/Translate'
 
 // Vue.prototype.$axios = axios
-
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
@@ -19,7 +20,9 @@ Vue.use(VueResource)
 const router = new VueRouter({
   routes: [
     { path: '/', component: Home },
-    { path: '/helloworld', component: HelloWorld }
+    { path: '/helloworld', component: HelloWorld },
+    { path: '/userslist', component: UsersList },
+    { path: '/learnES6', component: LearnES6 }
   ],
   mode: 'history'
 })
