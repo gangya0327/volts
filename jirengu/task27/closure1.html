@@ -10,6 +10,25 @@
 
 <body>
 
+  <script>
+    var arr = []
+    for (var i = 0; i < 2; i++) {
+      arr[i] = function() {
+        return i
+      }
+    }
+    console.log(arr[0]()) // 2
+
+    var closureA = []
+    for (var i = 0; i < 2; i++) {
+      (function(i) {
+        closureA[i] = function() {
+          return i
+        }
+      })(i)
+    }
+    console.log(closureA[1]())
+  </script>
 </body>
 
 </html>
