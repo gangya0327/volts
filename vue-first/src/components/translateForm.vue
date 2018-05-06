@@ -51,6 +51,9 @@ export default {
   padding: 30px 60px;
   border: 1px solid #ccc;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .form-control {
   margin: 20px 0;

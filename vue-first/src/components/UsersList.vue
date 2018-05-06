@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id='userslist'>
     <h1>Users</h1>
     <form v-on:submit='addUser'>
       <input type="text" v-model='newUser.name' placeholder="Enter name">
@@ -64,5 +64,10 @@ export default {
 <style>
 .contacted {
   text-decoration: line-through;
+}
+#userslist {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 </style>

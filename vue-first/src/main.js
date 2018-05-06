@@ -22,7 +22,8 @@ const router = new VueRouter({
     { path: '/', component: Home },
     { path: '/helloworld', component: HelloWorld },
     { path: '/userslist', component: UsersList },
-    { path: '/learnES6', component: LearnES6 }
+    { path: '/learnES6', component: LearnES6 },
+    { path: '/translate', component: Translate }
   ],
   mode: 'history'
 })

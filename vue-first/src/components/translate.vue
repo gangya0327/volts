@@ -44,5 +44,17 @@ export default {
 </script>
 
 <style>
-
+#translateOutput {
+  text-align: center;
+  color: blue;
+  font-size: 28px;
+  background: #eee;
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 62px;
+  line-height: 62px;
+  margin-top: 10px;
+}
 </style>

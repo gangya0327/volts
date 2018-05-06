@@ -4,7 +4,7 @@
     <h1>{{title}}</h1>
     <global/>
     <users v-bind:people='people'/>
-    <users v-bind:people='people'/>
+    <!-- <users v-bind:people='people'/> -->
     <app-footer v-bind:slogan='slogan'/>
   </div>
 </template>
@@ -73,27 +73,27 @@ export default {
           function() {
             console.log("error");
           }
-        ),
-      fetch("/apis/oauth/token", {
-        method: "post",
-        headers: {
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify({
-          client_secret: "123",
-          client_id: "admin",
-          username: "admin",
-          grant_type: "password",
-          password: "123"
-        })
-      })
-        .then(result => {
-          console.log(result);
-          return result.json();
-        })
-        .then(data => {
-          console.log(data);
-        });
+        )
+      // fetch("/apis/oauth/token", {
+      //   method: "post",
+      //   headers: {
+      //     "Content-type": "application/json"
+      //   },
+      //   body: JSON.stringify({
+      //     client_secret: "123",
+      //     client_id: "admin",
+      //     username: "admin",
+      //     grant_type: "password",
+      //     password: "123"
+      //   })
+      // })
+      //   .then(result => {
+      //     console.log(result);
+      //     return result.json();
+      //   })
+      //   .then(data => {
+      //     console.log(data);
+      //   });
 
     // this.$axios
     //   .post("/apis/oauth/token", {
