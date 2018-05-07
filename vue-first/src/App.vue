@@ -14,7 +14,13 @@
         <router-link to='/translate'>translate</router-link>
       </li>
       <li>
-        <router-link to='/learnES6'>learnES6</router-link>
+        <router-link to='/learnES6_1'>learnES6_1</router-link>
+      </li>
+      <li>
+        <router-link to='/learnES6_2'>learnES6_2</router-link>
+      </li>
+      <li>
+        <router-link to='/learnES6_3'>learnES6_3</router-link>
       </li>
     </ul>
     <router-view></router-view>

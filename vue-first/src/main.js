@@ -8,7 +8,9 @@ import Global from './components/Global'
 import Home from './components/Home'
 import HelloWorld from './components/HelloWorld'
 import UsersList from './components/UsersList'
-import LearnES6 from './components/LearnES6'
+import LearnES6_1 from './components/LearnES6_1'
+import LearnES6_2 from './components/LearnES6_2'
+import LearnES6_3 from './components/LearnES6_3'
 import Translate from './components/Translate'
 
 // Vue.prototype.$axios = axios
@@ -22,7 +24,9 @@ const router = new VueRouter({
     { path: '/', component: Home },
     { path: '/helloworld', component: HelloWorld },
     { path: '/userslist', component: UsersList },
-    { path: '/learnES6', component: LearnES6 },
+    { path: '/learnES6_1', component: LearnES6_1 },
+    { path: '/learnES6_2', component: LearnES6_2 },
+    { path: '/learnES6_3', component: LearnES6_3 },
     { path: '/translate', component: Translate }
   ],
   mode: 'history'
