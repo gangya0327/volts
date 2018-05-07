@@ -9,7 +9,7 @@ export default {
   name: "learnES6_3",
   data() {
     return {
-      msg: "学习ES6（二）"
+      msg: "学习ES6（三）"
     };
   },
   created() {
@@ -121,7 +121,18 @@ export default {
     reg.name = "马六代理";
     console.log(reg.name);
     //15. Decorator 修饰器
-    
+    function chooseCourse(target){
+      target.course = '物理'
+    }
+    function setStudy(target){
+      target.study = function(){
+        console.log('学习' + target.course)
+      }
+    }
+    @chooseCourse
+    @setStudy
+    class Student{}
+    Student.study()
   }
 };
 </script>
