@@ -1,12 +1,15 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+
+//模块化加载
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import Global from './components/Global'
-import Home from './components/Home'
-import HelloWorld from './components/HelloWorld'
+import FirstClass from './components/FirstClass'
+// import HelloWorld from './components/HelloWorld'
+import TodoList from './components/TodoList'
 import UsersList from './components/UsersList'
 import LearnES6_1 from './components/LearnES6_1'
 import LearnES6_2 from './components/LearnES6_2'
@@ -22,8 +25,9 @@ Vue.use(VueResource)
   //配置路由
 const router = new VueRouter({
   routes: [
-    { path: '/', component: Home },
-    { path: '/helloworld', component: HelloWorld },
+    { path: '/firstclass', component: FirstClass },
+    // { path: '/helloworld', component: HelloWorld },
+    { path: '/todolist', component: TodoList },
     { path: '/userslist', component: UsersList },
     { path: '/learnES6_1', component: LearnES6_1 },
     { path: '/learnES6_2', component: LearnES6_2 },

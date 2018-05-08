@@ -22,7 +22,7 @@ import Footer from "./Footer";
 //     grant_type: password
 //   };
 export default {
-  name: "home",
+  name: "firstclass",
   data() {
     return {
       title: "这是我的第一个vue项目",
