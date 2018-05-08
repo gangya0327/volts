@@ -121,18 +121,19 @@ export default {
     reg.name = "马六代理";
     console.log(reg.name);
     //15. Decorator 修饰器
-    function chooseCourse(target){
-      target.course = '物理'
+    function chooseCourse(target) {
+      target.course = "物理";
     }
-    function setStudy(target){
-      target.study = function(){
-        console.log('学习' + target.course)
-      }
+    function setStudy(target) {
+      target.study = function() {
+        console.log("学习" + target.course);
+      };
     }
     @chooseCourse
     @setStudy
-    class Student{}
-    Student.study()
+    class Student {}
+    Student.study();
+    //16. Model export import
   }
 };
 </script>
