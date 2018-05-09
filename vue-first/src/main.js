@@ -40,7 +40,10 @@ const router = new VueRouter({
 
 // 全局注册组件
 Vue.component('global', Global)
-
+Vue.http.interceptors.push(function(request) {
+  // modify headers
+  request.headers.set("Authorization", "Bearer 1f0a6938-f818-469e-8933-683de4ad277a");
+});
 /* eslint-disable no-new */
 new Vue({
   router,

@@ -26,29 +26,49 @@
   </form>
 
   <button id='goPOST'>post</button>
+  <button id='goINDEX'>index</button>
   <script>
-  $(document).ready(function(){
-    $('#goPOST').click(function(){
-      $.ajax({
-        type: 'POST',
-        url: 'http://106.12.7.122:8080/oauth/token',
-        data: {
-          client_secret: "123",
-          client_id: "admin",
-          username: "admin",
-          grant_type: "password",
-          password: "123"
-        },
-        dataType: 'json',
-        success: function(){
-          console.log(123)
-        },
-        error: function(){
-          console.log(999)
-        }
+    $(document).ready(function() {
+      var access_token;
+      $('#goPOST').click(function() {
+        $.ajax({
+          type: 'POST',
+          url: 'http://106.12.7.122:8080/oauth/token',
+          data: {
+            client_secret: "123",
+            client_id: "admin",
+            username: "admin",
+            grant_type: "password",
+            password: "123"
+          },
+          dataType: 'json',
+          success: function(res) {
+            console.log(res)
+            console.log(res.access_token)
+            access_token = res.access_token
+          },
+          error: function() {
+            console.log(999)
+          }
+        })
+      })
+      $('#goINDEX').click(function() {
+        $.ajax({
+          type: 'GET',
+          url: 'http://106.12.7.122:8080/api/index',
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+          }, //这里设置header
+          dataType: 'json',
+          success: function(data) {
+            console.log(data)
+          },
+          error: function() {
+            console.log(999)
+          }
+        })
       })
     })
-  })
   </script>
 </body>
 
