@@ -1,0 +1,32 @@
+/* 设置全局变量 */
+
+:root {
+  --main-bg-color: #f4f4f4;
+  --main-txt-color: #333;
+  --header-bg-color: #6767cc;
+  --header-txt-color: #fff;
+  --container-width: 90%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-color);
+}
+
+header#main-header {
+  background-color: var(--header-bg-color);
+  color: var(--header-txt-color);
+}
+
+.container {
+  width: var(--container-width);
+  margin: 20px auto;
+}
+
+header#main-header h1{
+  margin: 0;
+  padding: 0;
+}

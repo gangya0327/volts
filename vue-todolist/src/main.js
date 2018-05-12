@@ -32,16 +32,22 @@ var filters = {
   }
 }
 
-new Vue({
+let app = new Vue({
   el: '.todoapp',
   data: {
     msg: 'helloworld',
     newTodo: 'input something',
-    todos: [
-      { content: 'vue', completed: false },
-      { content: 'vuex', completed: false }
+    todos: [{
+        content: 'vue',
+        completed: false
+      },
+      {
+        content: 'vuex',
+        completed: false
+      }
     ],
-    editedTodo: []
+    editedTodo: [],
+    hashName: 'all'
   },
   computed: {
     remain() {
@@ -56,6 +62,9 @@ new Vue({
           todo.completed = value
         })
       }
+    },
+    filteredTodos(){
+      return filters[this.hashName](this.todos)
     }
   },
   directives: {
@@ -67,8 +76,8 @@ new Vue({
   },
   methods: {
     addTodo(e) {
-      if(!this.newTodo){
-        return 
+      if (!this.newTodo) {
+        return
       }
       this.todos.push({
         content: this.newTodo,
@@ -86,13 +95,27 @@ new Vue({
     },
     doneEdit(todo, index) {
       this.editedTodo = null
-      if(!todo.content){
+      if (!todo.content) {
         this.removeTodo(index)
       }
     },
-    cancelEdit(todo){
+    cancelEdit(todo) {
       this.editedTodo = null
       todo.content = this.editCache
+    },
+    clear() {
+      this.todos = filters.active(this.todos)
     }
   }
 })
+
+function hashChange() {
+ let hashName = location.hash.replace(/#\/?/, '')
+ if(filters[hashName]){
+   app.hashName = hashName
+ }else{
+   location.hash = ''
+   app.hashName = 'all'
+ }
+}
+window.addEventListener('hashchange', hashChange)
