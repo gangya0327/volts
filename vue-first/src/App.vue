@@ -11,7 +11,7 @@
         <router-link to='/helloworld'>Hello World</router-link>
       </li> -->
       <li>
-        <router-link to='/todolist'>代办事项</router-link>
+        <router-link to='/request'>网络请求</router-link>
       </li>
       <li>
         <router-link to='/userslist'>用户列表</router-link>
@@ -30,6 +30,9 @@
       </li>
       <li>
         <router-link to='/learnES6_4'>学习ES6_4</router-link>
+      </li>
+      <li>
+        <router-link to='/cssvar'>CSS变量存储</router-link>
       </li>
     </ul>
     <router-view></router-view>
@@ -52,11 +55,13 @@ export default {
   display: flex;
   justify-content: flex-end;
   border-bottom: 1px solid #000;
+  flex-wrap: wrap;
+  padding: 10px 0;
 }
 .navbarUl li {
   border: 1px solid #ccc;
   border-radius: 2px;
-  margin: 20px 10px;
+  margin: 7px 10px;
   font-size: 18px;
   padding: 3px 7px;
   background-color: skyblue;
@@ -70,16 +75,15 @@ export default {
   text-decoration: none;
   color: inherit;
 }
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
   .navbarUl li {
     font-size: 16px;
-    margin: 20px 5px;
   }
 }
-@media screen and (max-width: 900px){
+/* @media screen and (max-width: 900px){
   .navbarUl li {
     font-size: 12px;
     margin: 10px 3px;
   }
-}
+} */
 </style>
